@@ -8,17 +8,17 @@ import matplotlib.pyplot as plt
 
 # example crate
 xy_pts = np.array([
-    [40., 15.],
-    [-40., 15.],
-    [0.,-10.]
+    [6.1, 1.22],
+    [-6.1, 1.22],
+    [0.,-0.66]
 ])
 
 # square
-xy_pts = np.array([
-    [1., 1.],
-    [-1., 1.],
-    [0.,-0.75]
-])
+# xy_pts = np.array([
+#     [1., 1.],
+#     [-1., 1.],
+#     [0.,-0.75]
+# ])
 
 z_error_margin = 0.1  # meters? anything really lowest z value
 x_step_size = 0.01
@@ -122,12 +122,12 @@ def calculate_lengths(normal):
 
 
 # inputs in degrees (NYC at Noon, march 29th 2021)
-azimuth = 250.07
-elevation = 60
+azimuth = 0
+elevation = 45
 
 n = calculate_normal(azimuth, elevation)
 # n = np.array([0, 0, 1])
-zs = calculate_lengths(n)
+zs = calculate_lengths(np.array([1,1,1]))
 
 # issues:
 # large rectangular panels have a hard time tracking degrees < 80
